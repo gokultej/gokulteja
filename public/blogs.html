@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page with Black Box</title>
+    <script src="JavaScript/blogsuser.js">
+    
+    </script>
+    <link rel="stylesheet" href="css/blogsstyle.css">
+
+    <style>
+        /* Add your CSS styles here */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #222; /* Dark background color */
+            color: #fff; /* Light text color */
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .description-box {
+            margin-bottom: 10px;
+            border-radius: 10%; /* Border radius 10% */
+        }
+
+        .description-value {
+            background-color: #333; /* Darker background color for description */
+            padding: 5px;
+            border-radius: 10%; /* Border radius 10% */
+        }
+
+        .date-time-box {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .date-box,
+        .time-box {
+            flex: 1;
+            margin-right: 10px;
+            border-radius: 10%; /* Border radius 10% */
+        }
+
+        .date-box,
+        .time-box {
+            background-color: #333; /* Darker background color for date and time */
+            padding: 5px;
+        }
+
+        .date-value,
+        .time-value {
+            color: #fff; /* Light text color for date and time */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="black-boxk">
+        <!-- Navbar -->
+        <ul>
+            <li class="nav-box"><a href="/home"><img src="images/home.svg" alt="Home" class="home-icon"> Home</a></li>
+            <li class="nav-box"><a href="/resume"><img src="images/resume.svg" alt="Resume" class="home-icon"> Resume</a></li>
+            <li class="nav-box"><a href="/projects"><img><img src="images/works.svg" alt="Projects" class="home-icon"> My Works</a></li>
+            <li class="nav-box"><a href="/blogs"><img src="images/blog.png" alt="blogs" class="home-icon"> Blogs</a></li>
+            <li class="nav-box"><a href="/contact"><img><img src="images/contact.svg" alt="Contact" class="home-icon"> Contact Me</a></li>
+        </ul>
+    </div>
+    
+    <div class="gokul-image">
+        <img src="images/gokul.png" alt="Gokul">
+    </div>
+    
+    <div class="gokul-text">
+        Gokulteja
+    </div>
+    <div class="black-boxn"> 
+        <!-- Main content container -->
+        <div id="blog-list" style="margin-top: 10rem;"></div> 
+        <!-- Modal HTML -->
+        <div id="myModal" class="modal">
+            <!-- Inside the modal-content div -->
+            <div class="modal-content">
+                <!-- Close button -->
+                <span class="close">&times;</span>
+                <!-- Modal content -->
+                <div id="blogContent"></div>
+            
+            </div>
+
+        </div>
+        <!-- Pagination buttons -->
+        <div id="pagination"></div>
+        <!-- Blog info -->
+        <div id="blog-info" style="color: aqua;"></div>
+        <div id="page-info" style="color: aqua;"></div>
+
+        <div class="top-left-text"> <!-- New div for the text -->
+            Blogs  <div style="margin-top: -2.1rem;margin-left: 10rem;">
+                <img src="images/lines.png">
+              </div>
+          </div>
+    </div>
+    
+    <script>
+        // Close the modal when clicking on the close button
+        document.getElementsByClassName("close")[0].onclick = function() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

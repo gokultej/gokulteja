@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic HTML Page with Black Box</title>
+<style>
+  /* CSS for the black box */
+ /* CSS for the black box */
+@font-face {
+    font-family: 'Mothra';
+    src: url('../fonts/MOTHRA.ttf') format('truetype'); /* Update the path */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mothra', Arial, sans-serif;
+    background-image: url('../images/grad.jpg'); /* Update the path to your background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    height: 100vh;
+    position: relative;
+}
+
+html{
+    height: 100%;
+}
+
+.black-boxk {
+    background-color: rgb(33, 29, 29);
+    padding: 20px;
+    text-align: right; /* Align content to the right */
+    border-radius: 15px; /* Add rounded corners */
+    width: 25rem; /* Reduce width */
+    position: absolute; /* Position absolute to place it on top of black-boxn */
+    top: -143px; /* Adjust top position to overlap with black-boxn */
+    right: 20rem; /* Adjust right position */
+    z-index: 2; /* Ensure it's above black-boxn */
+}
+
+.black-boxk ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display list items horizontally */
+}
+
+.black-boxk ul li {
+    margin-left: 20px; /* Add margin to separate the list items */
+}
+
+.black-boxk ul li:first-child {
+    margin-left: 0; /* Remove margin from the first list item */
+}
+
+.black-boxk ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.home-icon{
+    margin-right: 0.4rem;
+    width: 30px;
+}
+
+.black-boxk ul li:hover {
+    background-color: rgb(177, 65, 31);
+    border-radius: 30%; /* Change background color to yellow on hover */
+    margin-left:1rem;
+}
+
+.nav-box{
+    width: 5rem;
+    margin-left: 2rem;
+    background-color: #6b4646;
+    border-radius: 30%;
+}
+
+.black-boxn {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    top:2rem;
+    margin-top: 10.8rem;
+    margin-left: 7.5rem; /* Adjust left margin for positioning */
+    transform: translateX(-50%); /* Center horizontally */
+    width: 72rem;
+    height: 50rem;
+    background-color: #000000;
+    border-radius: 1rem;
+    animation: slideInFromRight 1s ease-out forwards; 
+    padding: 20px;
+    position: relative;
+}
+
+.gokul-image {
+    position: absolute;
+    animation: slideInFromLeft 1s ease-out forwards;
+    margin-top: -8.5rem;
+    left: 120px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Animation keyframes */
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+
+/* Animation keyframes */
+@keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+
+.gokul-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gokul-text {
+    position: absolute;
+    margin-top: -8.5rem;
+    top: 12px;
+    left: 190px; /* Adjust as needed */
+    font-size: 2rem; /* Adjust font size as needed */
+    color: white;
+    font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+}
+
+.gokul-text1 {
+    position: absolute;
+    margin-top: 4rem;
+    top: 20px;
+    left: 60px; /* Adjust as needed */
+    font-size: 2rem; /* Adjust font size as needed */
+    color: white;
+    font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+}
+
+.top-left-text {
+    position: absolute;
+    top: 50px; /* Adjust as needed */
+    left: 90px; /* Adjust as needed */
+    color: white;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    font-weight:bold;
+    animation: slideInFromRight 1s ease-out forwards;
+}
+
+.form-container {
+    position: absolute;
+    top: 150px;
+    left: 350px;
+    transform: translateX(-50%);
+    width: 70%;
+    max-width: 600px;
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form-container label, .form-container input, .form-container textarea, .form-container button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-container input, .form-container textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #666;
+    border-radius: 5px;
+}
+
+.form-container button {
+    background-color: #1775ee;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #145ea4;
+}
+
+/* Profile image box */
+.profile-box {
+    position: fixed;
+    top: 350px;
+    right: 400px;
+    width: 200px;
+    height: 250px;
+    background-color: #f0d7d7;
+    border-radius: 10px;
+    padding: 20px;
+    animation: slideInFromRight 1s ease-out forwards;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 30%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.circles {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+    overflow: hidden;
+}
+
+.social-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* CSS for mobile devices */
+@media screen and (max-width: 768px) {
+    .black-boxn {
+        margin-left: 1rem; /* Adjust left margin for mobile */
+        width: auto; /* Set width to auto */
+    }
+
+    .form-container {
+        top: 250px; /* Adjust top position */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%);
+    }
+
+    .profile-box {
+        top: 600px; /* Adjust top position */
+        right: 50%; /* Center horizontally */
+        transform: translateX(50%);
+    }
+
+    .black-boxk ul li {
+        margin-left: 10px; /* Adjust margin for list items */
+    }
+
+    .home-icon {
+        width: 20px; /* Adjust icon size */
+    }
+
+    .gokul-text {
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%);
+    }
+
+    .gokul-image {
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%);
+    }
+}
+
+</style>
+</head>
+<body>
+  <div class="black-boxk"> <!-- New black box for nav bar -->
+    <ul>
+      <li class="nav-box"><a href="/home"><img src="images/home.svg" alt="Home" class="home-icon"> Home</a></li>
+      <li class="nav-box"><a href="/resume"><img src="images/resume.svg" alt="Resume" class="home-icon"> Resume</a></li>
+      <li class="nav-box"><a href="/projects"><img><img src="images/works.svg" alt="Projects" class="home-icon"> My Works</a></li>
+      <li class="nav-box"><a href="/blogs"><img src="images/blog.png" alt="blogs" class="home-icon"> Blogs</a></li>
+      <li class="nav-box"><a href="/contact"><img><img src="images/contact.svg" alt="Contact" class="home-icon"> Contact Me</a></li>
+    </ul>
+  </div>
+  
+<div class="gokul-image">
+<img src="images/gokul.png" alt="Gokul">
+</div>
+
+<div class="gokul-text">
+Gokulteja
+</div>
+<div class="black-boxn">
+Black Box
+
+<div class="top-left-text"> <!-- New div for the text -->
+Contact Me  <div style="margin-top: -2.1rem;margin-left: 10rem;">
+    <img src="images/lines.png">
+  </div>
+</div>
+
+<div class="form-container">
+  <form action="/submit-contact" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <label for="message">Message:</label>
+    <textarea id="message" name="message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+</div>
+
+<!-- Profile image box -->
+<div class="profile-box">
+<div class="profile-image">
+<img src="images/photo.jpg" alt="Profile Picture">
+</div>
+<div class="circles">
+<a href="https://www.instagram.com"><div class="circle"><img src="images/Instagram.png" alt="Instagram" class="social-icon"></div></a>
+<a href="https://www.linkedin.com"><div class="circle"><img src="images/linkedin.png" alt="LinkedIn" class="social-icon"></div></a>
+<a href="https://www.github.com"><div class="circle"><img src="images/GitHub.png" alt="GitHub" class="social-icon"></div></a>
+</div>
+</div>
+
+
+</body>
+</html>

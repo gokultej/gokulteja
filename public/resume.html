@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic HTML Page with Black Box</title>
+<style>
+  /* CSS for the black box */
+ 
+@font-face {
+    font-family: 'Mothra';
+    src: url('../fonts/MOTHRA.ttf') format('truetype'); /* Update the path */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+    background-image: url('../images/grad.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    position: relative;
+     /* Ensure positioning works correctly */
+  }
+
+.black-boxk {
+  background-color: rgb(33, 29, 29);
+  padding: 20px;
+  text-align: right; /* Align content to the right */
+  border-radius: 15px; /* Add rounded corners */
+  width: 25rem; /* Reduce width */
+  position: absolute; /* Position absolute to place it on top of black-boxn */
+  top: -143px; /* Adjust top position to overlap with black-boxn */
+  right: 20rem; /* Adjust right position */
+  z-index: 2; /* Ensure it's above black-boxn */
+}
+
+.black-boxk ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Display list items horizontally */
+}
+
+.black-boxk ul li {
+  margin-left: 20px; /* Add margin to separate the list items */
+}
+
+.black-boxk ul li:first-child {
+  margin-left: 0; /* Remove margin from the first list item */
+}
+
+.black-boxk ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.home-icon{
+  margin-right: 0.4rem;
+  width: 30px;
+}
+.black-boxk ul li:hover {
+  background-color: rgb(177, 65, 31);
+  border-radius: 30%; /* Change background color to yellow on hover */
+  margin-left:1rem;
+}
+
+.nav-box{
+  width: 5rem;
+  margin-left: 2rem;
+  background-color: #6b4646;
+  border-radius: 30%;
+}
+
+  .black-boxn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  top:2rem;
+  margin-top: 10.8rem;
+  margin-left: 7.5rem; /* Adjust left margin for positioning */
+  transform: translateX(-50%); /* Center horizontally */
+  width: 72rem;
+  height: 95rem;
+  background-color: #070505;
+  border-radius: 1rem;
+  animation: slideInFromRight 1s ease-out forwards; 
+  padding: 20px;
+  position: relative;
+}
+.gokul-image {
+    position: absolute;
+    animation: slideInFromLeft 1s ease-out forwards;
+   margin-top: -8.5rem;
+    left: 120px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+   /* Animation keyframes */
+   @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  
+/* Animation keyframes */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.gokul-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gokul-text {
+    position: absolute;
+    margin-top: -8.5rem;
+    top: 12px;
+    left: 190px; /* Adjust as needed */
+    font-size: 2rem; /* Adjust font size as needed */
+    color: white;
+    font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+  }
+  .gokul-text1 {
+    position: absolute;
+    margin-top: 4rem;
+    top: 20px;
+    left: 60px; /* Adjust as needed */
+    font-size: 2rem; /* Adjust font size as needed */
+    color: white;
+    font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+  }
+
+  .top-left-text {
+  position: absolute;
+  top: 50px; /* Adjust as needed */
+  left: 90px; /* Adjust as needed */
+  color: white;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2rem;
+  font-weight:bold;
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
+
+.grey-box:hover {
+    background-color: #bbb; /* Change background color on hover */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+</style>
+</head>
+<body>
+    <div class="black-boxk"> <!-- New black box for nav bar -->
+        <ul>
+          <li class="nav-box"><a href="/home"><img src="images/home.svg" alt="Home" class="home-icon"> Home</a></li>
+          <li class="nav-box"><a href="/resume"><img src="images/resume.svg" alt="Resume" class="home-icon"> Resume</a></li>
+          <li class="nav-box"><a href="/projects"><img><img src="images/works.svg" alt="Projects" class="home-icon"> My Works</a></li>
+          <li class="nav-box"><a href="/blogs"><img src="images/blog.png" alt="blogs" class="home-icon"> Blogs</a></li>
+          <li class="nav-box"><a href="/contact"><img><img src="images/contact.svg" alt="Contact" class="home-icon"> Contact Me</a></li>
+        </ul>
+      </div>
+      
+<div class="gokul-image">
+    <img src="images/gokul.png" alt="Gokul">
+  </div>
+  
+  <div class="gokul-text">
+    Gokulteja
+  </div>
+  <div class="black-boxn">
+    Black Box
+  
+    <div class="top-left-text"> <!-- New div for the text -->
+      Resume  <div style="margin-top: -2.1rem;margin-left: 10rem;">
+        <img src="images/lines.png">
+      </div>
+    </div>
+  
+    <!-- Name -->
+    <div style="color: white; font-size: 3rem; position: absolute; top: 120px; left: 90px;">
+      Jakkala Gokul Teja
+    </div>
+  
+    <!-- Grey box and professional summary text -->
+    <div style="position: absolute; top: 200px; left: 90px; width: 600px; background-color: #ccc; padding: 20px;border-radius: 10%;">
+      <div style="font-size: 1.5rem; color: #333; font-weight: bold; margin-bottom: 10px;">Professional Summary</div>
+      <ul style="font-size: 1.2rem; color: #333; list-style-type: disc; padding-left: 20px;">
+        <li>Data Analysis</li>
+        <li>Data Science</li>
+        <li>Machine Learning Engineer</li>
+        <li>AI Engineer</li>
+        <li>Python Developer</li>
+        <li>Project Management</li>
+        <li>Problem Solving</li>
+        <li>Leadership Qualities</li>
+        <li>Fast Learner</li>
+        <li>Research Support</li>
+        <li>Active Listening</li>
+        <li>Multitasking and Organization</li>
+        <li>Teamwork and Collaboration</li>
+        <li>High Productivity</li>
+      </ul>
+      <p style="font-size: 1.2rem; color: #333;">
+        Confident Research Intern with commitment to excellence and background in Machine Learning. Effective collaborator with great Data Analytics and Data Science skills. Proven history of detail-oriented and accurate work.
+      </p>
+    </div>
+    <div style="position: absolute; top: 200px; left: 750px; width: 350px; background-color: #ccc; padding: 20px; border-radius: 10%;">
+      <div style="font-size: 1.5rem; color: #333; font-weight: bold; margin-bottom: 10px;">Contact Information</div>
+      <ul style="font-size: 1.2rem; color: #333; list-style-type: none; padding-left: 0;">
+        <li>Address: Afzalgunj, Hyderabad, Telangana, India, 500012</li>
+        <li>Email: gokultej32@gmail.com</li>
+
+        <li><a href="https://www.linkedin.com/in/jakkala-gokul-teja-abb13522a/" style="color: #333; text-decoration: none;">LinkedIn</a>: <a href="https://www.linkedin.com/in/jakkala-gokul-teja-abb13522a/" style="color: #333; text-decoration: underline;">Jakkala Gokul Teja</a></li>
+        <li><a href="https://www.github.com/gokultej" style="color: #333; text-decoration: none;">GitHub</a>: <a href="https://www.github.com/gokultej" style="color: #333; text-decoration: underline;">gokultej</a></li>
+      </ul>
+    </div>
+    <div style="position: absolute; top: 470px; left: 750px; width: 350px; background-color: #ccc; padding: 20px; border-radius: 10%;">
+      <div style="font-size: 1.5rem; color: #333; font-weight: bold; margin-bottom: 10px;">Skills</div>
+      <div style="font-size: 1.2rem; color: #333; margin-bottom: 10px;">
+        <p style="font-weight: bold;">Programming Languages</p>
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li>Python - Expert</li>
+          <li>Java - Proficient</li>
+          <li>R - Competent</li>
+          <li>SQL - Competent</li>
+          <li>HTML, CSS, JavaScript - Competent</li>
+        </ul>
+      </div>
+      <div style="font-size: 1.2rem; color: #333;">
+        <p style="font-weight: bold;">Software & Tools</p>
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li>PyCharm</li>
+          <li>MySQL</li>
+          <li>Jupyter</li>
+          <li>Anaconda</li>
+          <li>Visual Studio Code (VSCode)</li>
+        </ul>
+      </div>
+      <div style="font-size: 1.2rem; color: #333; margin-bottom: 10px;">
+        <p>Languages</p>
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li>Telugu – Native Speaker</li>
+          <li>English – Proficient</li>
+          <li>Hindi – Proficient</li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Projects grey box -->
+    <div style="position: absolute; top: 1100px; left: 750px; width: 350px; background-color: #ccc; padding: 20px;border-radius: 10%;">
+      <div style="font-size: 1.5rem; color: #333; font-weight: bold; margin-bottom: 10px;">Projects (45 total)</div>
+      <ul style="font-size: 1.2rem; color: #333; list-style-type: disc; padding-left: 20px;">
+        <li>30+ projects in Machine and Deep Learning. Check GitHub repositories for details: <a href="https://www.github.com/gokultej" style="color: #333; text-decoration: none;">GitHub repositories</a> such that highlighted are : Face expression recognizer, Fruits Recognizer,Detecting Pneumonia,Stock Market Prediction,..etc</li>
+        <li>Other projects span various domains such as web development and app development.</li>
+      </ul>
+    </div>
+
+    <!-- Grey box and additional experience text -->
+    <!-- Grey box and additional experience text -->
+    <div style="position: absolute; top: 750px; left: 90px; width: 600px; background-color: #ccc; padding: 20px;border-radius: 10%;">
+      <div style="font-size: 1.5rem; color: #333; font-weight: bold; margin-bottom: 10px;">Professional Experience</div>
+      <p style="font-size: 1.2rem; color: #333; margin-bottom: 10px; font-weight: bold;">
+        Research Intern at SRISHTI24, IIIT-H in Hyderabad, India (Jan 2024 - Present)
+      </p>
+      <ul style="font-size: 1.2rem; color: #333; list-style-type: disc; padding-left: 20px;">
+        <li>Conducting research on emerging technologies in data analysis and computer science.</li>
+        <li>Prepared samples for analysis by performing complex sample preparation tasks.</li>
+        <li>Adhered to laboratory safety procedures to maintain compliance with quality control standards.</li>
+        <li>Coordinated and managed laboratory projects and experiments.</li>
+        <li>Implemented quality control measures for research procedures, minimizing errors and ensuring accurate findings.</li>
+      </ul>
+    </div>
+    <div style="position: absolute; top: 1100px; left: 90px; width: 600px; background-color: #ccc; padding: 20px;border-radius: 10%;">
+      <div style="font-size: 1.5rem; color: #333; font-weight: bold; margin-bottom: 10px;">Education</div>
+      <p style="font-size: 1.2rem; color: #333; margin-bottom: 10px;">
+        Methodist College Of Engineering, Abids, Hyderabad, Telangana<br>
+        • Bachelor of Technology in Computer Science and Engineering 3rd Year(Present CGPA: 8.40)<br>
+        • Conducted research on emerging technologies and trends in computer science.<br>
+        • Wrote technical documentation to explain application logic and design.<br>
+        • Performed debugging and troubleshooting tasks to optimize applications.
+      </p>
+      <p style="font-size: 1.2rem; color: #333; margin-bottom: 10px;">
+        Sri Gayatri Junior College, Dilsukhnagar<br>
+        • Class 12, Board of Intermediate Education (BIE) - Score: 9.2
+      </p>
+      <p style="font-size: 1.2rem; color: #333; margin-bottom: 10px;">
+        Brilliant Grammar High School, Begum Bazar<br>
+        • Class 10, Secondary School Certificate (SSC) - Score: 8.7
+      </p>
+    </div>
+
+  </div>
+  
+  
+
+</body>
+</html>

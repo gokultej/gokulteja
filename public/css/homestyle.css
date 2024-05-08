@@ -1,0 +1,485 @@
+
+@font-face {
+    font-family: 'Mothra';
+    src: url('../fonts/MOTHRA.ttf') format('truetype'); /* Update the path */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+    background-image: url('../images/grad.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    position: relative;
+     /* Ensure positioning works correctly */
+  }
+
+ 
+
+  /* White space */
+  .white-space {
+    display: inline-block;
+    width: 1rem;
+  }
+  .black-box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 17rem;
+    height: 30rem;
+    background-color: #070505;
+    margin-top:5.8rem;
+    margin-left: 3rem;
+    border-radius: 1rem;
+    padding: 20px;
+    position: fixed;
+    animation: slideInFromLeft 1s ease-out forwards; /* Position fixed for staying visible during scrolling */
+    top: 100px; /* Initial top position */
+    left: 50px; /* Initial left position */
+    z-index: 1000;
+} .black-boxn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 10.8rem;
+  margin-left: 30rem; /* Adjust left margin for positioning */
+  transform: translateX(-50%); /* Center horizontally */
+  width: 50rem;
+  height: 85rem;
+  background-color: #070505;
+  border-radius: 1rem;
+  animation: slideInFromRight 1s ease-out forwards; 
+  padding: 20px;
+  position: relative;
+}
+/* Animation keyframes */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+  /* Animation keyframes */
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .rounded-image1 {
+    position: absolute;
+    top: 3px;
+    left: 7px; /* Adjust top position */
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    border-radius: 50%; /* Make it a circle */
+    overflow: hidden; /* Hide overflowing content */
+    background-color: #4722b5; /* White background to hide corners */
+  }
+  .rounded-image1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+
+  /* Rounded image */
+  .rounded-image {
+    position: absolute;
+    top: -70px; /* Adjust top position */
+    width: 140px; /* Adjust width as needed */
+    height: 140px; /* Adjust height as needed */
+    border-radius: 20%; /* Make it a circle */
+    overflow: hidden; /* Hide overflowing content */
+    background-color: #fff; /* White background to hide corners */
+  }
+
+  /* Rounded image img */
+  .rounded-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+
+  /* Gokul image */
+  .gokul-image {
+    position: absolute;
+    animation: slideInFromLeft 1s ease-out forwards;
+    top: 40px;
+    left: 100px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  /* Gokul image img */
+  .gokul-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Gokul text */
+  .gokul-text {
+    position: absolute;
+    margin-top: 2rem;
+    top: 20px;
+    left: 170px; /* Adjust as needed */
+    font-size: 2rem; /* Adjust font size as needed */
+    color: white;
+    font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+  }
+  .gokul-text1 {
+    position: absolute;
+    margin-top: 4rem;
+    top: 20px;
+    left: 60px; /* Adjust as needed */
+    font-size: 2rem; /* Adjust font size as needed */
+    color: white;
+    font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+  }
+
+  /* Light grey box */
+  .light-grey-box {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    width: 18rem;
+    height: 10.5rem;
+    background-color: #333028ac; /* Light grey color */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 1rem;
+    transform: translate(-50%, -50%);
+  }
+
+  .rounded-box {
+   
+  width: 45px; /* Adjust width as needed */
+  height: 45px; /* Adjust height as needed */
+  border-radius: 50%; /* Make it a circle */
+  overflow: hidden; /* Hide overflowing content */
+  background-color: #ccc; /* Grey color */
+  margin-top: 10rem; /* Adjust margin as needed */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.rounded-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+.rounded-text-box {
+  position: absolute;
+  margin-top: 6.5rem;
+  margin-left: -5rem;
+  width: 158px; /* Adjust width as needed */
+  height: 28px; /* Adjust height as needed */
+  border-radius: 20px; /* Adjust border radius as needed */
+  background-color: #000000; /* Grey color */
+  padding: 10px; /* Add padding for content */
+  color: rgb(228, 13, 13); /* Text color */
+  font-size: 1.5rem; /* Adjust font size as needed */
+  font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+}
+/* CSS for the text-box class */
+.text-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: red; /* Add red font color */
+}
+
+.text-box1 {
+  position: absolute;
+  margin-top: 3.5rem;
+  margin-left: 0rem;
+  width: 158px; /* Adjust width as needed */
+  height: 37px; /* Adjust height as needed */
+  border-radius: 30px; /* Adjust border radius as needed */
+  background-color: #1d257a; /* Grey color */
+  padding: 10px; /* Add padding for content */
+  color: rgb(34, 74, 165); /* Text color */
+  font-size: 1.5rem; /* Adjust font size as needed */
+  font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+}
+.left-image1 {
+  width: 40px; /* Adjust width as needed */
+  height: 40px; 
+  margin-left: 1rem;/* Adjust height as needed */
+/* Make it a circle */
+  overflow: hidden; 
+  /* Hide overflowing content */
+}
+
+.left-image1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+.left-image2 {
+  width: 40px; /* Adjust width as needed */
+  height: 40px; 
+  margin-left: 1rem;/* Adjust height as needed */
+/* Make it a circle */
+  overflow: hidden; 
+  /* Hide overflowing content */
+}
+
+.left-image2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+
+.left-image {
+  width: 50px; /* Adjust width as needed */
+  height: 50px;
+  margin-left: 0.5rem; /* Adjust height as needed */
+/* Make it a circle */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.left-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+.text-e {
+  background-color: absolute; /* Grey color */
+  color: rgb(231, 16, 16); /* Text color */
+ /* Add padding for content */
+  /* Adjust border radius as needed */
+  margin-left: 10px; /* Adjust margin as needed */
+  font-family: 'Mothra', Arial, sans-serif;
+  font-size: 1.35rem; /* Use Mothra font */
+}
+.text {
+  background-color: absolute; /* Grey color */
+  color: rgb(231, 16, 16); /* Text color */
+/* Add padding for content */
+ /* Adjust border radius as needed */
+  margin-left: 10px; /* Adjust margin as needed */
+  font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+}
+ /* Add hover effect to the left images */
+ .left-image:hover::after {
+    content: attr(data-text); /* Display the text provided in the 'data-text' attribute */
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  .about-me1{
+    position: absolute;
+    top:110px;
+    left: 90px;
+    right: 50px;
+    color:rgb(112, 191, 66);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1rem;
+  justify-self: start;
+  }
+
+/* CSS for the top-left text */
+.top-left-text {
+  position: absolute;
+  top: 50px; /* Adjust as needed */
+  left: 90px; /* Adjust as needed */
+  color: white;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2rem;
+  font-weight:bold;
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
+.what-i-do{
+    position: absolute;
+    top: 350px; /* Adjust as needed */
+    left: 90px; /* Adjust as needed */
+    color: white;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    font-weight:bold
+
+}
+
+.wbox1 {
+    position: absolute;
+    top: 400px; /* Adjust as needed */
+    left: 90px; /* Adjust as needed */
+    width: 300px; /* Adjust width as needed */
+    height: 160px; /* Adjust height as needed */
+    border-radius: 30px; /* Adjust border radius as needed */
+    background-color: #6b4646; /* Grey color */
+    padding: 10px; /* Add padding for content */
+    color: white; /* Text color */
+    font-size: 1rem; /* Adjust font size as needed */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Use specified font */
+    display: flex; /* Use flexbox */
+}
+
+.wbox1 .image-container {
+    flex: 0 0 auto; /* Don't grow or shrink */
+    margin-right: 10px; /* Add margin to separate the image from text */
+}
+
+
+.wbox1 img {
+    border-radius: 40%; /* Apply border-radius to the image */
+}
+
+
+.text-container {
+    margin-top: -1rem;
+    margin-left: 1rem;
+    flex: 1; /* Grow to fill remaining space */
+}
+
+.skills{
+    position: absolute;
+    top: 1050px; /* Adjust as needed */
+    left: 90px; /* Adjust as needed */
+    color: white;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    font-weight:bold;
+    text-align: center;
+    margin-top: 20px;
+
+}
+.red-box {
+  width: 680px;
+  height: 200px;
+  background-color: #6b4646;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  white-space: nowrap; /* Prevent wrapping of images */
+}
+.slide1, .slide2, .slide3 {
+  display: inline-block; /* Ensure each slide is displayed inline */
+}
+.slide1 img, .slide2 img, .slide3 img {
+  width: 100px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add spacing between images */
+}
+/* Add this CSS to style the skills box */
+/* Add this CSS to style the skills box */
+.skills-images {
+  overflow: hidden;
+}
+
+.image-set {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: max-content; /* Ensure the container expands to fit its content */
+}
+
+.image-set img {
+  flex: 0 0 auto; /* Prevent images from shrinking */
+  width: 100px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add spacing between images */
+}
+
+.w3-right {
+  position: absolute;
+  margin-left: 41.8rem;
+}
+
+.slide {
+  display: inline-block;
+}
+
+.slide img {
+  width: 100px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add spacing between images */
+}
+.mySlides {
+  display: flex; /* Display slides as flex container */
+  align-items: center; /* Align images vertically within the slide */
+  justify-content: space-around; /* Evenly distribute images horizontally within the slide */
+  width: 100%; /* Set width to 100% to fill the container */
+  height: 100%; /* Set height to 100% to fill the container */
+}
+
+.mySlides img {
+  flex: 1; /* Allow images to grow and shrink */
+  width: 100%; /* Ensure images fill the available space */
+  margin: 0 5px; /* Add margin between images */
+}
+
+
+.black-boxk {
+  background-color: rgb(33, 29, 29);
+  padding: 20px;
+  text-align: right; /* Align content to the right */
+  border-radius: 15px; /* Add rounded corners */
+  width: 25rem; /* Reduce width */
+  position: absolute; /* Position absolute to place it on top of black-boxn */
+  top: 30px; /* Adjust top position to overlap with black-boxn */
+  right: 20rem; /* Adjust right position */
+  z-index: 2; /* Ensure it's above black-boxn */
+}
+
+.black-boxk ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Display list items horizontally */
+}
+
+.black-boxk ul li {
+  margin-left: 20px; /* Add margin to separate the list items */
+}
+
+.black-boxk ul li:first-child {
+  margin-left: 0; /* Remove margin from the first list item */
+}
+
+.black-boxk ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.home-icon{
+  margin-right: 0.4rem;
+  width: 30px;
+}
+.black-boxk ul li:hover {
+  background-color: rgb(177, 65, 31);
+  border-radius: 30%; /* Change background color to yellow on hover */
+  margin-left:1rem;
+}
+
+.nav-box{
+  width: 5rem;
+  margin-left: 2rem;
+  background-color: #6b4646;
+  border-radius: 30%;
+}

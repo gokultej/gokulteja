@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            text-decoration: underline;
+            color: #ccc;
+        }
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-top: 0;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #333;
+            outline: none;
+            box-shadow: 0 0 5px #555;
+        }
+        #pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#pagination button:hover {
+    background-color: #333;
+}
+
+    </style>
+    <script src="JavaScript/blogsadmin.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showTab('blogs')">Blogs</a>
+        <a href="#" onclick="showTab('projects')">Projects</a>
+        <a href="#" onclick="showTab('certiexpers')">certifications and experiences/a>
+        <form id="logoutForm" action="/logout" method="get" style="display: inline-block; margin-left: 20px;">
+            <button type="submit">Logout</button>
+        </form>
+    </nav>
+    <div class="container">
+        <div id="blogs" style="display: none;">
+            <nav>
+                <a href="#" onclick="showSubTab('createBlogs')">Create</a>
+                <a href="#" onclick="showSubTab('editBlogs', setupPaginationAndDisplayBlogs)">Edit</a>
+
+
+
+            </nav>
+            <div id="createBlogs" style="display: block;">
+                <h2>Create New Blog Post</h2>
+                <form action="/create-blog" method="post" enctype="multipart/form-data">
+                    <label for="blogtitle">Title:</label>
+                    <input type="text" id="blogtitle" name="blogtitle" required>
+                    <br>
+                    <label for="blogdescription">Description:</label>
+                    <textarea id="blogdescription" name="blogdescription" rows="5" required></textarea>
+                    <br>
+                    <label for="blogdate">Date:</label>
+                    <input type="date" id="blogdate" name="blogdate" required>
+                    <br>
+                    <br>
+                    <label for="blogtime">Time:</label>
+                    <input type="time" id="blogtime" name="blogtime" required>
+                    <br>
+                    <br>
+                    <label for="blogimage">Image:</label>
+                    <input type="file" id="blogimage" name="blogimage" accept=".png,.jpg,.jpeg" required>
+                    <br>
+                    <br>
+                    <button type="submit">Create Blog</button>
+                </form>
+            </div>
+            
+            
+            <div id="editBlogs" style="display: none;">
+                <h2>Edit Blogs</h2>
+                <div id="editBlogsContainer">
+                    <!-- Existing content -->
+                </div>
+                <div id="pagination" style="margin-top: 20px;">
+                    <!-- Pagination buttons will be added dynamically here -->
+                </div>
+            </div>
+            
+        </div>
+        <script src="JavaScript/projectsadmin.js"></script>
+        <div id="projects" style="display: none;">
+            <nav>
+                <a href="#" onclick="showSubTab('createProjects')">Create</a>
+                <a href="#" onclick="showSubTab('editProjects',setupPaginationAndDisplayProjects)">Edit</a>
+            </nav>
+            <div id="createProjects" style="display: block;">
+                <h2>Create New Project</h2>
+                <form action="/create-project" method="POST" enctype="multipart/form-data">
+                    <label for="projecttitle">Title:</label>
+                    <input type="text" id="projecttitle" name="projecttitle" required>
+                    <br>
+                    <label for="projectdescription">Description:</label>
+                    <textarea id="projectdescription" name="projectdescription" rows="5" required></textarea>
+                    <br>
+                    <label for="projectdate">Date:</label>
+                    <input type="date" id="projectdate" name="projectdate" required>
+                    <br>
+                    <label>Priority:</label><br>
+                    <input type="radio" id="highPriority" name="priority" value="high" required>
+                    <label for="highPriority">High</label><br>
+                    <input type="radio" id="mediumPriority" name="priority" value="medium">
+                    <label for="mediumPriority">Medium</label><br>
+                    <input type="radio" id="lowPriority" name="priority" value="low">
+                    <label for="lowPriority">Low</label><br>
+                    <br>
+                    <label for="projectgithubUrl">GitHub URL:</label>
+                    <input type="text" id="projectgithubUrl" name="projectgithubUrl" required>
+                    <br>
+                    <label for="projectimage">Upload Image:</label>
+                    <input type="file" id="projectimage" name="projectimage" accept="image/*" required>
+                    <br>
+                    <button type="submit">Create Project</button>
+                </form>
+            </div>
+            
+            <div id="editProjects" style="display: none;">
+                <h2>Edit Projects</h2>
+                <div id="editProjectsContainer">
+                    <!-- Existing content -->
+                </div>
+                <div id="paginationProjects" style="margin-top: 20px;">
+                    <!-- Pagination buttons will be added dynamically here -->
+                </div>
+            </div>
+            
+        </div>
+        <div id="certiexper" style="display: none;">
+            <nav>
+                <a href="#" onclick="showSubTab('createcertiexper')">Create</a>
+                <a href="#" onclick="showSubTab('editcertiexper')">Edit</a>
+            </nav>
+            <div id="createcertiexpers" style="display: block;">
+                <h2>Create New certiexper</h2>
+                <form action="/create-certiexper" method="post" enctype="multipart/form-data">
+                    <label for="topic">Topic:</label>
+                    <input type="text" id="topic" name="topic" required>
+                    <br>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="5" required></textarea>
+                    <br>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                    <br>
+                    <label for="image">Upload Image:</label>
+                    <input type="file" id="image" name="image" accept="image/*" required>
+                    <br>
+                    <button type="submit">Create certiexper</button>
+                </form>
+            </div>
+            <div id="editcertiexpers" style="display: none;">
+                <!-- Edit certiexpers content here -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,237 @@
+/* CSS for the black box */
+@font-face {
+    font-family: 'Mothra';
+    src: url('../fonts/MOTHRA.ttf') format('truetype'); /* Update the path */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+    background-image: url('../images/grad.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    /* Ensure positioning works correctly */
+}
+
+.black-boxk {
+    background-color: rgb(33, 29, 29);
+    padding: 20px;
+    text-align: right; /* Align content to the right */
+    border-radius: 15px; /* Add rounded corners */
+    width: 25rem; /* Reduce width */
+    position: absolute; /* Position absolute to place it on top of black-boxn */
+    top: -143px; /* Adjust top position to overlap with black-boxn */
+    right: 20rem; /* Adjust right position */
+    z-index: 2; /* Ensure it's above black-boxn */
+}
+
+.black-boxk ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display list items horizontally */
+}
+
+.black-boxk ul li {
+    margin-left: 20px; /* Add margin to separate the list items */
+}
+
+.black-boxk ul li:first-child {
+    margin-left: 0; /* Remove margin from the first list item */
+}
+
+.black-boxk ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.home-icon {
+    margin-right: 0.4rem;
+    width: 30px;
+}
+
+.black-boxk ul li:hover {
+    background-color: rgb(177, 65, 31);
+    border-radius: 30%; /* Change background color to yellow on hover */
+    margin-left: 1rem;
+}
+
+.nav-box {
+    width: 5rem;
+    margin-left: 2rem;
+    background-color: #6b4646;
+    border-radius: 30%;
+}
+.black-boxn {
+display: flex;
+flex-direction: column; /* Set flex-direction to column */
+justify-content: flex-start; /* Align items to the start of the column */
+align-items: center; /* Center items horizontally */
+top: 2rem;
+margin-top: 10.8rem;
+margin-left: 7.5rem;
+transform: translateX(-50%);
+width: 72rem;
+height: auto;
+background-color: #070505;
+border-radius: 1rem;
+animation: slideInFromRight 1s ease-out forwards;
+padding: 20px;
+position: relative;
+}
+
+
+/* New CSS for blog containers */
+.blog-container {
+    width: calc(33.33% - 20px); /* Three blogs in a row */
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.blog {
+    text-align: center;
+}
+
+.blog img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+}
+
+.gokul-image {
+    position: absolute;
+    animation: slideInFromLeft 1s ease-out forwards;
+    margin-top: -8.5rem;
+    left: 120px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Animation keyframes */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation keyframes */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.gokul-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gokul-text {
+    position: absolute;
+    margin-top: -8.5rem;
+    top: 12px;
+    left: 190px; /* Adjust as needed */
+    font-size: 2rem; /* Adjust font size as needed */
+    color: white;
+    font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+}
+
+.gokul-text1 {
+    position: absolute;
+    margin-top: 4rem;
+    top: 20px;
+    left: 60px; /* Adjust as needed */
+    font-size: 2rem; /* Adjust font size as needed */
+    color: white;
+    font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+}
+
+.top-left-text {
+    position: absolute;
+    top: 50px; /* Adjust as needed */
+    left: 90px; /* Adjust as needed */
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    animation: slideInFromRight 1s ease-out forwards;
+}
+
+#pagination {
+margin-top: 20px;
+align-self: flex-end; /* Align pagination to the bottom of the black-boxn */
+}
+
+.top-left-text {
+position: absolute;
+top: 50px; /* Adjust as needed */
+left: 90px; /* Adjust as needed */
+color: white;
+font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: 2rem;
+font-weight:bold;
+animation: slideInFromRight 1s ease-out forwards;
+}
+
+/* Modal styles */
+.modal {
+display: none;
+position: fixed;
+z-index: 999;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+background-color: #fefefe;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+border-radius: 5px;
+width: 80%;
+max-width: 600px;
+position: relative;
+}
+
+.close {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
