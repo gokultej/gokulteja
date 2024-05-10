@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Basic HTML Page with Black Box</title>
+<title>GokulTeja Resume </title>
+<link rel="icon" href="images/gokul.ico" type="image/x-icon">
 <style>
   /* CSS for the black box */
  
@@ -11,7 +12,10 @@
     font-family: 'Mothra';
     src: url('../fonts/MOTHRA.ttf') format('truetype'); /* Update the path */
   }
-
+  @font-face {
+    font-family: 'Post';
+    src: url('../fonts/PoetsenOne-Regular.ttf') format('truetype'); /* Update the path */
+  }
   body {
     margin: 0;
     padding: 0;
@@ -154,7 +158,7 @@
   top: 50px; /* Adjust as needed */
   left: 90px; /* Adjust as needed */
   color: white;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family:'Post';
   font-size: 2rem;
   font-weight:bold;
   animation: slideInFromRight 1s ease-out forwards;
@@ -190,9 +194,9 @@
     Black Box
   
     <div class="top-left-text"> <!-- New div for the text -->
-      Resume  <div style="margin-top: -2.1rem;margin-left: 10rem;">
-        <img src="images/lines.png">
-      </div>
+      Resume  <div style="margin-top: -5.5rem; margin-left: 10rem;">
+        <img src="images/lines.png" width="150rem" height="150rem">
+    </div>
     </div>
   
     <!-- Name -->
@@ -267,7 +271,7 @@
   
     <!-- Projects grey box -->
     <div style="position: absolute; top: 1100px; left: 750px; width: 350px; background-color: #ccc; padding: 20px;border-radius: 10%;">
-      <div style="font-size: 1.5rem; color: #333; font-weight: bold; margin-bottom: 10px;">Projects (45 total)</div>
+      <div style="font-size: 1.5rem; color: #333; font-weight: bold; margin-bottom: 10px;">Projects </div>
       <ul style="font-size: 1.2rem; color: #333; list-style-type: disc; padding-left: 20px;">
         <li>30+ projects in Machine and Deep Learning. Check GitHub repositories for details: <a href="https://www.github.com/gokultej" style="color: #333; text-decoration: none;">GitHub repositories</a> such that highlighted are : Face expression recognizer, Fruits Recognizer,Detecting Pneumonia,Stock Market Prediction,..etc</li>
         <li>Other projects span various domains such as web development and app development.</li>
@@ -306,6 +310,29 @@
         Brilliant Grammar High School, Begum Bazar<br>
         • Class 10, Secondary School Certificate (SSC) - Score: 8.7
       </p>
+    </div>
+
+    <div style="position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%);">
+      <h2 style="color: white;"></h2>
+      <ul class="route-visits-list" style="list-style-type: none; padding: 0;">
+        <!-- Use JavaScript to fetch and display route visit counts -->
+        <script>
+          fetch('/resume-visits') // Fetch route visit counts from the server
+            .then(response => response.json()) // Parse the JSON response
+            .then(data => {
+              // Find the visit count for the /resume route
+              const resumeVisits = data['/resume'] || 0;
+              // Create a list item for the /resume route visit count
+              const listItem = document.createElement('li');
+              listItem.style.fontSize = '1.2rem';
+              listItem.style.color = 'white';
+              listItem.textContent = `Resume Page Visited Count: ${resumeVisits} `;
+              // Append the list item to the unordered list
+              document.querySelector('.route-visits-list').appendChild(listItem);
+            })
+            .catch(error => console.error('Error fetching route visit counts:', error));
+        </script>
+      </ul>
     </div>
 
   </div>
