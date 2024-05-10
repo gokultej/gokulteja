@@ -65,6 +65,9 @@ async function fetchProjectsAndRender(page = 1) {
         const response = await fetch(`/edit-projects?page=${page}`);
         const { projects, totalPages } = await response.json();
 
+        // Sort projects by date (newest to oldest)
+        projects.sort((a, b) => new Date(b.projectdate) - new Date(a.projectdate));
+
         // Map priority values to numerical values
         const priorityMap = {
             'high': 3,
@@ -76,14 +79,14 @@ async function fetchProjectsAndRender(page = 1) {
             project.priorityValue = priorityMap[project.priority.toLowerCase()] || 0; // Convert to lowercase to handle variations
         });
 
-        console.log("Projects before sorting:", projects); // Log projects before sorting
-
         // Sort projects by priority (high to low)
         projects.sort((a, b) => {
-            return b.priorityValue - a.priorityValue;
+            // If dates are equal, sort by priority
+            if (a.projectdate === b.projectdate) {
+                return b.priorityValue - a.priorityValue;
+            }
+            return 0; // Preserve original order if dates are not equal
         });
-
-        console.log("Projects after sorting:", projects); // Log projects after sorting
 
         const projectListContainer = document.getElementById('project-list');
         projectListContainer.innerHTML = ''; // Clear existing content
@@ -106,7 +109,7 @@ async function fetchProjectsAndRender(page = 1) {
                        
                     </div>
                     <button class="github-button" data-url="${project.projectgithubUrl}" style="cursor: pointer;">
-                    <img src="images/github.png" alt="GitHub Icon" style="width: 20px; height: 20px; margin-right: 5px;">
+                    <img src="images/Github.png" alt="GitHub Icon" style="width: 20px; height: 20px; margin-right: 5px;">
                     View Source on GitHub
                     </button>
 
@@ -194,3 +197,4 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
