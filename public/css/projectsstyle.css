@@ -3,6 +3,10 @@
     font-family: 'Mothra';
     src: url('../fonts/MOTHRA.ttf') format('truetype'); /* Update the path */
 }
+@font-face {
+    font-family: 'Post';
+    src: url('../fonts/PoetsenOne-Regular.ttf') format('truetype'); /* Update the path */
+  }
 
 body {
     margin: 0;
@@ -171,16 +175,7 @@ position: relative;
     font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
 }
 
-.top-left-text {
-    position: absolute;
-    top: 50px; /* Adjust as needed */
-    left: 90px; /* Adjust as needed */
-    color: white;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 2rem;
-    font-weight: bold;
-    animation: slideInFromRight 1s ease-out forwards;
-}
+
 
 #pagination {
 margin-top: 20px;
@@ -192,7 +187,7 @@ position: absolute;
 top: 50px; /* Adjust as needed */
 left: 90px; /* Adjust as needed */
 color: white;
-font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-family:'Post';
 font-size: 2rem;
 font-weight:bold;
 animation: slideInFromRight 1s ease-out forwards;
