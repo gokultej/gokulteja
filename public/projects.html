@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic HTML Page with Black Box</title>
+    <title>GokulTeja Projects</title>
     <script src="JavaScript/projectsuser.js"></script>
     <link rel="stylesheet" href="css/projectsstyle.css">
+    <link rel="icon" href="images/gokul.ico" type="image/x-icon">
     <style>
         /* Add your CSS styles here */
         .modal {
@@ -94,47 +95,48 @@
             color: #fff;
         }
         .image-value img {
-    width: 5rem; /* Set the width to 5rem */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure the image does not exceed its container */
-}
+            width: 5rem; /* Set the width to 5rem */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 100%; /* Ensure the image does not exceed its container */
+        }
 
-.project-item {
-    display: flex;
-    margin-bottom: 20px;
-}
+        .project-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
 
-.image-box {
-    width: 20%; /* Adjust the width as needed */
-    margin-right: 20px;
-}
+        .image-box {
+            width: 20%; /* Adjust the width as needed */
+            margin-right: 20px;
+        }
 
-.image-box img {
-    width: 15rem;
-    height: 15rem;
-    
-}
+        .image-box img {
+            width: 15rem;
+            height: 15rem;
+        }
 
-.project-details {
-    flex: 1;
-    margin-left: 10rem;
+        .project-details {
+            flex: 1;
+            margin-left: 10rem;
+        }
 
-}
+        .project-details h2 {
+            margin-top: 0;
+        }
 
-.project-details h2 {
-    margin-top: 0;
-     /* Remove default margin */
-}
+        .project-details p {
+            margin: 0 0 10px;
+        }
 
-.project-details p {
-    margin: 0 0 10px;
-     /* Adjust margin as needed */
-}
+        .priority-box {
+            margin-top: 10px;
+        }
 
-.priority-box {
-    margin-top: 10px;
-}
-
+        .visit-count {
+            color: aqua;
+            text-align: center;
+            margin-top: 20px;
+        }
 
     </style>
 </head>
@@ -176,10 +178,12 @@
         <div id="project-info" style="color: aqua;"></div>
         <div id="page-info" style="color: aqua;"></div>
         <div class="top-left-text"> <!-- New div for the text -->
-            Projects   <div style="margin-top: -2.1rem;margin-left: 10rem;">
-                <img src="images/lines.png">
-              </div>
+            Projects    <div style="margin-top: -5.5rem; margin-left: 10rem;">
+                <img src="images/lines.png" width="150rem" height="150rem">
+            </div>
         </div>
+        <!-- Visit count for /projects route -->
+        
     </div>
     
     <script>
@@ -195,6 +199,28 @@
                 modal.style.display = "none";
             }
         }
+    </script>
+    <script>
+         document.addEventListener("DOMContentLoaded", function() {
+        // Function to fetch visit count for /projects route
+        function fetchProjectsVisitCount() {
+            fetch('/resume-visits') // Fetch visit count for /projects route from the server
+                .then(response => response.json()) // Parse the JSON response
+                .then(data => {
+                    const projectsVisits = data['/projects'] || 0; // Extract visit count for /projects route
+                    const visitCountElement = document.createElement('div'); // Create a new div element
+                    visitCountElement.textContent = `Projects Page Visited Count: ${projectsVisits} visits`; // Set its text content
+                    visitCountElement.style.color = 'white'; // Set text color to white
+                    visitCountElement.style.marginTop = '20px';
+                    visitCountElement.style.textAlign = 'center'; // Center align text
+                    document.querySelector('.black-boxn').appendChild(visitCountElement);// Append it to the projects-visit-count div
+                })
+                .catch(error => console.error('Error fetching projects visit count:', error));
+        }
+
+        // Call the fetchProjectsVisitCount function when the page loads
+        fetchProjectsVisitCount();
+    });
     </script>
 </body>
 </html>
