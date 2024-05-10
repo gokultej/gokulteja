@@ -109,7 +109,7 @@ async function fetchProjectsAndRender(page = 1) {
                        
                     </div>
                     <button class="github-button" data-url="${project.projectgithubUrl}" style="cursor: pointer;">
-                    <img src="images/Github.png" alt="GitHub Icon" style="width: 20px; height: 20px; margin-right: 5px;">
+                    <img src="images/GitHub.png" alt="GitHub Icon" style="width: 20px; height: 20px; margin-right: 5px;">
                     View Source on GitHub
                     </button>
 
