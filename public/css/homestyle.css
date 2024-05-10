@@ -3,18 +3,26 @@
     font-family: 'Mothra';
     src: url('../fonts/MOTHRA.ttf') format('truetype'); /* Update the path */
   }
+  @font-face {
+    font-family: 'post';
+    src: url('../fonts/PoetsenOne-Regular.ttf') format('truetype'); /* Update the path and format */
+}
+@font-face {
+  font-family: 'post';
+  src: url('../fonts/Ubuntu.ttf') format('truetype'); /* Update the path and format */
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
+  background-image: url('../images/grad.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Full viewport height */
+  position: relative;
+  /* Ensure positioning works correctly */
+}
 
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Mothra', Arial, sans-serif; /* Use Mothra font */
-    background-image: url('../images/grad.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Full viewport height */
-    position: relative;
-     /* Ensure positioning works correctly */
-  }
 
  
 
@@ -182,6 +190,8 @@
   object-fit: cover; /* Maintain aspect ratio */
 }
 
+
+
 .rounded-text-box {
   position: absolute;
   margin-top: 6.5rem;
@@ -297,7 +307,7 @@
     left: 90px;
     right: 50px;
     color:rgb(112, 191, 66);
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:'Ubuntu';
   font-size: 1rem;
   justify-self: start;
   }
@@ -308,7 +318,7 @@
   top: 50px; /* Adjust as needed */
   left: 90px; /* Adjust as needed */
   color: white;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family:'post',Cambria, Cochin, Georgia;
   font-size: 2rem;
   font-weight:bold;
   animation: slideInFromRight 1s ease-out forwards;
@@ -319,9 +329,9 @@
     top: 350px; /* Adjust as needed */
     left: 90px; /* Adjust as needed */
     color: white;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'post';
+    font-weight: bold;
     font-size: 2rem;
-    font-weight:bold
 
 }
 
@@ -362,9 +372,9 @@
     top: 1050px; /* Adjust as needed */
     left: 90px; /* Adjust as needed */
     color: white;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'post';
+    font-weight: bold;
     font-size: 2rem;
-    font-weight:bold;
     text-align: center;
     margin-top: 20px;
 
