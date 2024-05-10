@@ -58,7 +58,8 @@ document.getElementById("commentForm").addEventListener("submit", function(event
   event.preventDefault(); // Prevent default form submission
   const commentData = {
       title: document.getElementById("blogTitle").value,
-      comment: document.getElementById("comment").value
+      comment: document.getElementById("comment").value,
+      date: blog.blogdate
   };
   sendComment(commentData); // Send comment data to the server
   disableCommentForm(); // Disable the comment form after submission
@@ -103,7 +104,7 @@ localStorage.setItem(commentKey, 'true');
 // Function to disable the comment form after submission
 function disableCommentForm() {
 const commentForm = document.getElementById("commentForm");
-commentForm.innerHTML = "<p>You've already commented on this blog.</p>";
+commentForm.innerHTML = "<p>Received your commented on this blog</p>";
 }
 // Function to fetch blogs and render them
   async function fetchBlogsAndRender(page = 1) {
