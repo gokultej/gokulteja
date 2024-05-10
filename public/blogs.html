@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic HTML Page with Black Box</title>
-    <script src="JavaScript/blogsuser.js">
-    
-    </script>
+    <title>GokulTeja Blogs</title>
+    <script src="JavaScript/blogsuser.js"></script>
     <link rel="stylesheet" href="css/blogsstyle.css">
-
+    <link rel="icon" href="images/gokul.ico" type="image/x-icon">
     <style>
         /* Add your CSS styles here */
         .modal {
@@ -124,12 +122,12 @@
         <div id="page-info" style="color: aqua;"></div>
 
         <div class="top-left-text"> <!-- New div for the text -->
-            Blogs  <div style="margin-top: -2.1rem;margin-left: 10rem;">
-                <img src="images/lines.png">
-              </div>
+            Blogs   <div style="margin-top: -5.5rem; margin-left: 10rem;">
+                <img src="images/lines.png" width="150rem" height="150rem">
+            </div>
           </div>
     </div>
-    
+
     <script>
         // Close the modal when clicking on the close button
         document.getElementsByClassName("close")[0].onclick = function() {
@@ -143,6 +141,30 @@
                 modal.style.display = "none";
             }
         }
+    </script>
+
+    <script>
+        // Wait for the DOM content to be fully loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to fetch visit count for /blogs route
+            function fetchBlogsVisitCount() {
+                fetch('/resume-visits') // Fetch visit count for /blogs route from the server
+                    .then(response => response.json()) // Parse the JSON response
+                    .then(data => {
+                        const blogsVisits = data['/blogs'] || 0; // Extract visit count for /blogs route
+                        const visitCountElement = document.createElement('div'); // Create a new div element
+                        visitCountElement.textContent = `Blogs Page Visited Count: ${blogsVisits} `; // Set its text content
+                        visitCountElement.style.color = 'white'; // Set text color to white
+                        visitCountElement.style.marginTop = '20px'; // Set top margin
+                        visitCountElement.style.textAlign = 'center'; // Center align text
+                        document.querySelector('.black-boxn').appendChild(visitCountElement); // Append it to the black-boxn div
+                    })
+                    .catch(error => console.error('Error fetching blogs visit count:', error));
+            }
+
+            // Call the fetchBlogsVisitCount function when the page loads
+            fetchBlogsVisitCount();
+        });
     </script>
 </body>
 </html>
